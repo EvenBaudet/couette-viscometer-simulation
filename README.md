@@ -63,22 +63,6 @@ The matrix M is assembled once using **SciPy sparse CSC format** and factorised.
 
 ---
 
-## Project Structure
-
-```
-.
-├── main.py           # Matplotlib UI, animation loop, widget callbacks
-├── obj.py            # Viscosimetre class — system state and update logic
-├── eulerback.py      # BackwardsEuler class — sparse matrix assembly and solver
-├── initialisation.py # Grid and parameter initialisation
-├── graph_v.py        # Velocity profile plot
-├── graph_omega.py    # Angular velocity plots
-├── pdv_lagrangien.py # Lagrangian particle view
-├── eulerien_pdv.py   # Eulerian velocity field view
-├── requirements.txt  # Python dependencies
-└── variables.txt     # Documentation of shared variables
-```
-
 ### Architecture
 
 The code is split into three layers that can evolve independently:
@@ -89,14 +73,13 @@ main.py  (display & widgets)
           └── BackwardsEuler  (eulerback.py — numerical solver)
 ```
 
-Swapping the solver (e.g. to Crank–Nicolson for second-order time accuracy) requires only touching `eulerback.py`.
-
 ---
 
 ## Installation
 
+All required python files are in the \code folder
+
 ```bash
-git clone https://github.com/<your-username>/couette-viscometer.git
 cd couette-viscometer
 pip install -r requirements.txt
 python main.py
@@ -108,7 +91,7 @@ python main.py
 
 ## Results
 
-Under constant inner drive, the velocity profile converges smoothly to the known analytical steady state v_θ^∞(r) = Ar + B/r. Under sinusoidal drive, the outer cylinder's angular velocity follows a smoothed, phase-lagged response — with lag and amplitude governed by ν and the gap geometry. No instability or divergence was observed across all tested parameter ranges, confirming the theoretical unconditional stability of the scheme.
+Under constant inner drive, the velocity profile converges smoothly to the known analytical steady state v_θ^∞(r) = Ar + B/r. Under sinusoidal drive, the outer cylinder's angular velocity follows a smoothed response — with lag and amplitude governed by ν and the gap geometry. No instability or divergence was observed across all tested parameter ranges, confirming the theoretical unconditional stability of the scheme.
 
 A full technical report (derivations, matrix construction, software architecture) is available in [`couette_viscometer_report.pdf`](couette_viscometer_report.pdf).
 
