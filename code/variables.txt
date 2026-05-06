@@ -1,0 +1,26 @@
+rayon interieur : R1 (float) slider_R1
+rayon extérieur : R2 (float) slider_R2
+masse volumique : rho (float) text_box_rho
+masse surfacique dy cylindre : sigma (float) text_box_sigma
+viscosité dynamique : eta (float) text_box_eta
+viscosité cinématique : nu (float) 
+pas de temps : dt (float)
+pas de rayon : dr (float)
+vitesse : u (list)
+angle du cylindre intérieur : teta_R1 (float)
+angle du cylindre exterieur :teta_R2 (float)
+vitesse du cylindre intérieur : omega_R1 (float)
+vitesse du cylindre extérieur : omega_R2 (float)
+nombre de points entre R1 et R2 : N (int)
+fréquence : f (float) text_box_f
+amplitude : A (float) slider_A
+Viscosimetre : objet
+    Viscosimetre.t : float
+    Viscosimetre.v : liste de float
+    Viscosimetre.liste_t : liste de float
+    Viscosimetre.liste_v : liste de listes de float
+    Viscosimetre.v1 : fonction (prend un float, renvoie un float)
+
+BackwardsEuler : objet
+    BackwardsEuler.visc : Viscosimetre
+    BackwardsEuler.M : csc_matrix
