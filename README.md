@@ -68,7 +68,7 @@ The matrix M is assembled once using **SciPy sparse CSC format** and factorised.
 The code is split into three layers that can evolve independently:
 
 ```
-main.py  (display & widgets)
+main.py  (display & widgets) ─── graphes.py
    └── Viscosimetre  (obj.py — system state)
           └── BackwardsEuler  (eulerback.py — numerical solver)
 ```
@@ -77,7 +77,7 @@ main.py  (display & widgets)
 
 ## Installation
 
-All required python files are in the \code folder
+All required python files, requirements.txt and variables.txt files, are located in the \code folder.
 
 ```bash
 cd couette-viscometer
