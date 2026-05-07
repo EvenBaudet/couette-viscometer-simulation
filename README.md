@@ -93,12 +93,12 @@ python main.py
 
 Under constant inner drive, the velocity profile converges smoothly to the known analytical steady state v_θ^∞(r) = Ar + B/r. Under sinusoidal drive, the outer cylinder's angular velocity follows a smoothed response — with lag and amplitude governed by ν and the gap geometry. No instability or divergence was observed across all tested parameter ranges, confirming the theoretical unconditional stability of the scheme.
 
-A full technical report (derivations, matrix construction, software architecture) is available in [`couette_viscometer_report.pdf`](couette_viscometer_report.pdf).
+A full report (derivations, matrix construction, software architecture) is available in [`couette_viscometer_report.pdf`](couette_viscometer_report.pdf).
 
 ---
 
 ## Team
 
-Built during the *Coding Weeks* intensive at **CentraleSupélec / Université Paris-Saclay** (November 2025).
+Built during the *Coding Weeks* course at **CentraleSupélec / Université Paris-Saclay** (November 2025).
 
 Even Baudet · Paul Le Borgne · Geoffroy de La Faire · Tom Aunis · Ryad Badis · Yanis Boucherk–Barthomeuf
