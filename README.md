@@ -8,7 +8,7 @@
 
 ## Overview
 
-A **Couette viscometer** measures fluid viscosity by confining a fluid between an inner and an outer cylinder. When the inner cylinder rotates, viscous drag progressively sets the outer one in motion. The rate of this transfer encodes the kinematic viscosity ν.
+A **Couette viscometer** measures fluid viscosity by confining a fluid between an inner and an outer cylinder. When the inner cylinder rotates, viscous drag progressively sets the outer one in motion.
 
 This project simulates that physical process in real time. It solves the governing PDE numerically at each time step and renders the result as an interactive Matplotlib application with live plots and animated fluid particles.
 
@@ -32,10 +32,6 @@ The tangential velocity field v_θ(r, t) satisfies the following diffusion-type 
 
 The PDE is discretised in space with **second-order finite differences** on a uniform radial grid of Nᵣ points, and integrated in time with an **implicit backward Euler scheme**.
 
-### Why implicit?
-
-An explicit (forward Euler) scheme is conditionally stable and requires Δt ≲ (Δr)² / 2ν — prohibitively small for fine grids or high viscosity. An early prototype confirmed this with wildly oscillating velocity profiles. The implicit scheme is **unconditionally stable** for any Δt, at the cost of solving a linear system each step.
-
 ### The linear system
 
 At each time step, the discretised equation produces a **tridiagonal system** M · v^(n+1) = v^n, where the matrix coefficients for interior point i are:
@@ -54,12 +50,11 @@ The matrix M is assembled once using **SciPy sparse CSC format** and factorised.
 
 ## Features
 
-- **Real-time interactive simulation** — play, pause, tweak parameters on the fly
+- **Real-time interactive simulation** — play, pause, parameters
 - **Eulerian view** — instantaneous velocity vectors on a fixed grid
 - **Lagrangian view** — fluid particles advected and tracked over time
 - **Live plots** — velocity profile v(r), angular velocity ω₁(t) and ω₂(t)
 - **Configurable inner cylinder drive** — constant, sinusoidal, or square-wave ω₁(t)
-- **Adjustable parameters** — R₁, R₂, ν, Nᵣ, frequency, amplitude
 
 ---
 
@@ -84,8 +79,6 @@ cd couette-viscometer
 pip install -r requirements.txt
 python main.py
 ```
-
-**Requirements:** Python ≥ 3.9, NumPy, SciPy, Matplotlib.
 
 ---
 
